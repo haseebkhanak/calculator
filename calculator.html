@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style calculator.css">
+</head>
+<body>
+    <div class="container">
+        <input type="text" id="main" readonly>
+        <br>
+        <div class="keys">
+        <button class="buttons"  onclick="main.value=main.value.toString().slice(0,-1)">C</button>
+        <button class="buttons"  onclick="main.value+='%'">%</button>
+        <button class="buttons"  onclick="Square()">x<sup>^2</sup></button>
+        <button class="buttons"  onclick="main.value=''">A/C</button>
+        <button class="buttons"  onclick="Sinn()">Sin</button>
+        <button class="buttons"  onclick="Coss()">Cos</button>
+        <button class="buttons"  onclick="log()">log</button>
+        <button class="buttons"  onclick="log2()">log<sub>2</sub></button>
+        <button class="operator" onclick="main.value+='+'">+</button>
+        <button class="operator" onclick="main.value+='-'">-</button>
+        <button class="operator" onclick="main.value+='/'">&divide;</button>
+        <button class="operator" onclick="main.value+='*'">&times;</button>
+        <button class="values"   onclick="main.value+='9'">9</button>
+        <button class="values"   onclick="main.value+='8'">8</button>
+        <button class="values"   onclick="main.value+='7'">7</button>
+        <button class="values"   onclick="main.value+='6'">6</button>
+        <button class="values"   onclick="main.value+='5'">5</button>
+        <button class="values"   onclick="main.value+='4'">4</button>
+        <button class="values"   onclick="main.value+='3'">3</button>
+        <button class="values"   onclick="main.value+='2'">2</button>
+        <button class="values"   onclick="main.value+='1'">1</button>
+        <button class="values"   onclick="main.value+='0'">0</button>
+        <button class="values"   onclick="main.value= eval(main.value)">=</button>
+        <button class="values"   onclick="main.value+='.'">.</button>
+        </div>
+    </div>
+</body>
+
+<script>
+    function Square()
+    {
+        var input1=parseFloat(document.getElementById("main").value);
+        var input2=2;
+        var a=Math.pow(input1,input2)
+        document.getElementById("main").value=a
+    }
+
+    function Sinn()
+    {
+        var input=document.getElementById("main").value;
+        var res=Math.sin(input*Math.PI/180);
+        document.getElementById("main").value=res;
+    }
+
+    function Coss()
+    {
+        var input=document.getElementById("main").value;
+        var res=Math.cos(input*Math.PI/180);
+        document.getElementById("main").value=res;
+    }
+
+    function log()
+    {
+        var input=document.getElementById("main").value;
+        var res=Math.log(input);
+        document.getElementById("main").value=res;
+    }
+
+    function log2()
+    {
+        var input=document.getElementById("main").value;
+        var res=Math.log2(input);
+        document.getElementById("main").value=res;
+    }
+</script>
+
+</html>
